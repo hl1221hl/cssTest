@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				margin: 0;
+			}
+			
+			body {
+				min-width: 500px;
+				font-family: arial;
+			}
+			
+			#header {
+				background: rgb(237, 237, 237);
+				text-align: center;
+				padding: 10px 0;
+			}
+			
+			#header a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			#header img {
+				vertical-align: middle;
+			}
+			
+			#header span {
+				font-size: 2rem;
+				margin-left: 0.3em;
+				vertical-align: middle;
+			}
+			
+			#title {
+				text-align: center;
+				font-family: 'Bree Serif', serif;
+				padding: 1em 0;
+			}
+			
+			#example {
+				border: solid 3px rgb(105, 105, 105);
+				border-radius: 10px;
+				margin: 0 auto;
+				background-color: black;
+				color: lightgray;
+				padding: 0 1em;
+				max-width: 450px;
+				position: relative;
+			}
+			
+			#example span {
+				position: absolute;
+				right: 15px;
+				top: 10px;
+				color: black;
+				text-shadow: -1px 2px rgb(105, 105, 105);
+			}
+			
+			#desc {
+				border: solid 2px rgb(106, 197, 172);
+				margin: 1.5em auto;
+				max-width: 450px;
+				position: relative;
+			}
+			
+			#begin {
+				background-color: rgb(106, 197, 172);
+				line-height: 1em;
+				padding: 0px 3px 3px 0px;
+				box-sizing: border-box;
+			}
+			
+			#end {
+				background-color: rgb(106, 197, 172);
+				line-height: 1em;
+				padding: 3px 0px 0px 3px;
+				float: right;
+			}
+			#desc:after{
+				content: "\200B";
+				visibility: hidden;
+				clear: both;
+				display:block;
+				height:0;
+			}
+			#desc p {
+				margin: 1em 1em;
+			}
+			#page_buttons{
+				text-align: center;
+			}
+			.page_button:active{
+				position: relative;
+				top: 2px;
+			}
+			.page_button:hover{
+				background-color: rgb(198,58,111);
+			}
+			.page_button{
+				display: inline-block;
+				margin: 0 1em;
+				padding: .3em 2.5em;
+				background-color: rgb(214,64,120);
+				border-radius: 3px;
+				text-decoration: none;
+				color: white;
+				border-bottom: solid 4px rgb(176,48,96);
+				text-shadow: 0 2px 0 #b03060;
+				transition: all 0.1s ease-out;
+			}
+			#page_num{
+				margin: 1.5em 0;
+				text-align: center;
+			}
+			#footer{
+				background: rgb(237, 237, 237);
+				min-height: 5em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="header">
+			<a href="http://zh.learnlayout.com/margin-auto.html">
+				<img src="img/logo.png" />
+				<span>CSS布局</span>
+			</a>
+		</div>
+		<div id="title">
+			<h1>margin: auto;</h1>
+		</div>
+		<div id="example">
+			<span>CSS</span>
+			<pre>
+<code>
+#main {
+  width: 600px;
+  margin: 0 auto;
+}</code>
+			</pre>
+		</div>
+		<div id="desc">
+			<span id="begin">&lt;div id=&quot;main&quot;&gt;</span>
+			<p>
+				设置块级元素的 width 可以阻止它从左到右撑满容器。然后你就可以设置左右外边距为 auto 来使其水平居中。元素会占据你所指定的宽度，然后剩余的宽度会一分为二成为左右外边距。
+			</p>
+			<p>
+				唯一的问题是，当浏览器窗口比元素的宽度还要窄时，浏览器会显示一个水平滚动条来容纳页面。让我们再来改进下这个方案... </p>
+			</p>
+			<span id="end">&lt;/div&gt;</span>
+		</div>
+		<div id="page_buttons">
+			<a class="page_button" href="#">上一页</a>
+			<a class="page_button" href="#">下一页</a>
+		</div>
+		<div id="page_num">1/19</div>
+		<div id="footer">
+			<div id="links"></div>
+		</div>
+	</body>
+
+</html>

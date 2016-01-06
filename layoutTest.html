@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			.f_wrap,
+			.p_wrap,
+			.i_wrap {
+				width: 500px;
+				margin: 10px auto;
+				box-shadow: 0 0px 3px deeppink;
+			}
+			
+			header {
+				background: cornflowerblue;
+				text-align: center;
+				line-height: 4em;
+				height: 4em;
+			}
+			
+			header h1 {
+				border: 1px solid red;
+				/*默认block的h1在父容器添加padding后会导致父容器高度突增*/
+				display: inline;
+			}
+			
+			nav {
+				background: yellow;
+				width: 100px;
+				list-style-type: none;
+			}
+			
+			nav li {
+				text-align: center;
+				padding: 2px;
+			}
+			
+			footer{
+				clear: both;
+				height: 40px;
+				background: firebrick;
+			}
+			/*浮动*/
+			
+			.f_wrap:after {
+				/*在float父元素的after中清理浮动*/
+				content: "\200B";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.f_wrap nav {
+				float: left;
+			}
+			
+			.f_wrap .conent {
+				float: left;
+				background: cyan;
+				word-break: break-all;
+				width: 300px;
+			}
+			
+			.f_wrap aside {
+				background: yellow;
+				width: 100px;
+				float: right;
+			}
+			/*Position*/
+			.p_wrap {
+				position: relative;
+			}
+			
+			.p_wrap .conent {
+				position: absolute;
+				left: 100px;
+				top: 4em;
+				background: cyan;
+				word-break: break-all;
+				width: 300px;
+			}
+			
+			.p_wrap aside {
+				position: absolute;
+				background: yellow;
+				right: 0px;
+				top: 4em;
+				width: 100px;
+				float: right;
+			}
+			/*inline-block (会有空白间隙,就是换行符)*/
+			.i_wrap{
+				width: 510px;
+			}
+			.i_wrap nav {
+				display: inline-block;
+				margin: 0;
+			}
+			
+			.i_wrap .conent {
+				display: inline-block;
+				background: cyan;
+				word-break: break-all;
+				width: 300px;
+				margin: 0;
+				/*防止跑到下面*/
+				vertical-align: top;
+			}
+			
+			.i_wrap aside {
+				display: inline-block;
+				margin: 0;
+				/*防止跑到下面*/
+				vertical-align: top;
+				background: yellow;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section class="f_wrap">
+			<header class="header">
+				<h1>float布局</h1>
+			</header>
+			<nav>
+				<li>菜单1</li>
+				<li>菜单2</li>
+				<li>菜单3</li>
+				<li>菜单4</li>
+				<li>菜单5</li>
+				<li>菜单6</li>
+			</nav>
+			<div class="conent">
+				<section>1内容aaaaaaaaaaaaaaaaaaaaaa</section>
+				<section>2内容bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</section>
+				<section>3内容ccccccccccccccccccccccccccccccccccccccccccc</section>
+			</div>
+			<aside>
+				<img src="img/logo.png" />
+			</aside>
+			<footer></footer>
+		</section>
+
+		<section class="p_wrap">
+			<header>
+				<h1>position布局</h1>
+			</header>
+			<nav>
+				<li>菜单1</li>
+				<li>菜单2</li>
+				<li>菜单3</li>
+				<li>菜单4</li>
+				<li>菜单5</li>
+				<li>菜单6</li>
+			</nav>
+			<div class="conent">
+				<section>1内容aaaaaaaaaaaaaaaaaaaaaa</section>
+				<section>2内容bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</section>
+				<section>3内容ccccccccccccccccccccccccccccccccccccccccccc</section>
+			</div>
+			<aside>
+				<img src="img/logo.png" />
+			</aside>
+			<footer></footer>
+		</section>
+
+		<section class="i_wrap">
+			<header>
+				<h1>inline-block布局</h1>
+			</header>
+			<nav>
+				<li>菜单1</li>
+				<li>菜单2</li>
+				<li>菜单3</li>
+				<li>菜单4</li>
+				<li>菜单5</li>
+				<li>菜单6</li>
+			</nav>
+			<div class="conent">
+				<section>1内容aaaaaaaaaaaaaaaaaaaaaa</section>
+				<section>2内容bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</section>
+				<section>3内容ccccccccccccccccccccccccccccccccccccccccccc</section>
+			</div>
+			<aside>
+				<img src="img/logo.png" />
+			</aside>
+			<footer></footer>
+		</section>
+	</body>
+
+</html>

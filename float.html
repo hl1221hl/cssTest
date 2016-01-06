@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.floatwrap {
+				border: 3px solid blue;
+			}
+			.floatwrap:after {
+				/*在float父元素的after中清理浮动*/
+				content: "\200B";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			.floatdiv {
+				/*浮动不影响其他元素的布局, 
+				 * 但会影响相邻文本、行内元素、inline-block、float的排列
+				 * */
+				float: left;
+				width: 20px;
+				margin: 1px;
+				border: 1px solid red;
+				text-align: center;
+			}
+			.rightfloatdiv{
+				float: right;
+				margin: 1px 1px 1px 10px;
+				text-align: center;
+				border: 1px solid red;
+				padding: 1 2px;
+			}
+			.inlineblockdiv{
+				border: 2px solid fuchsia;
+				display: inline-block;
+				width: 200px;
+			}
+			.border{
+				border: 2px solid fuchsia;
+			}
+			.end {
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="floatwrap">
+			<div class="floatdiv">1</div>
+			<div class="floatdiv">2</div>
+			<div class="floatdiv">3</div>
+			<div class="floatdiv">4</div>
+			<div class="floatdiv">5</div>
+			<div class="floatdiv">6</div>
+			<div class="rightfloatdiv">right888</div>
+			<!--前面元素的float不会影响这个div, 但会影响这个div中的文本-->
+			<div class="border">=============</div>
+			<div class="inlineblockdiv">哈哈哈哈</div>
+			
+		</div>
+		<div class="end">
+			end
+		</div>
+		<div class="end">
+			end2
+		</div>
+		<div class="end">
+			end3
+		</div>
+	</body>
+
+</html>
