@@ -16,7 +16,7 @@
 				clear: both;
 			}
 			.floatdiv {
-				/*浮动不影响其他元素的布局, 
+				/*浮动不影响其块级元素的布局, 
 				 * 但会影响相邻文本、行内元素、inline-block、float的排列
 				 * */
 				float: left;
@@ -38,7 +38,7 @@
 				width: 200px;
 			}
 			.border{
-				border: 2px solid fuchsia;
+				border: 2px solid yellow;
 			}
 			.end {
 				border: 1px solid green;
@@ -55,8 +55,8 @@
 			<div class="floatdiv">5</div>
 			<div class="floatdiv">6</div>
 			<div class="rightfloatdiv">right888</div>
-			<!--前面元素的float不会影响这个div, 但会影响这个div中的文本-->
-			<div class="border">=============</div>
+			<!--前面元素的float不会影响这个div, 但会影响这个div中的文本和行内元素-->
+			<div class="border"><button>1111</button><button>2222</button></div>
 			<div class="inlineblockdiv">哈哈哈哈</div>
 			
 		</div>
